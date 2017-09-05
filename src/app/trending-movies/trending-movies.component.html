@@ -1,0 +1,21 @@
+<ul class="list-unstyled">
+
+    <li class="media" *ngFor="let movie of trendingMovies">
+
+        <img class="d-flex mr-3" src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
+        <div class="media-body">
+            <div>
+                <span class="mt-0 mb-1">{{ movie.title }}</span>
+                <span class="glyphicon glyphicon-star" id="vote_average">{{ movie.vote_average}}</span>
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon-calendar" id="release_date">{{movie.release_date.split("-")[0]}}</span>
+                <span *ngFor="let genres of movie.genre_ids">{{genreData[genres]}}, </span>
+            </div>
+            <p class="description">{{ movie.overview }}</p>
+        </div>
+
+    </li>
+
+</ul>

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+
+    padding: 20px;
+
+}
+
+.media{
+
+    padding: 10px;
+
+}
