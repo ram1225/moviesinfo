@@ -11,11 +11,15 @@
 
             <div>
                 <span class="glyphicon glyphicon-calendar" id="release_date">{{movie.release_date.split("-")[0]}}</span>
-                <span *ngFor="let genres of movie.genre_ids">{{genreData[genres]}}, </span>
+                <span *ngFor="let genres of movie.genre_ids; let isLast=last" id="genres">{{genreData[genres]}}{{isLast ? '' : ' | '}} </span>
             </div>
             <p class="description">{{ movie.overview }}</p>
-        </div>
-
+        
+            <div class="moreinfo_footer">
+                <p class="view_more"><a id="movie_details"  alt="movie details">More Info</a></p>
+            </div>
+    
+    </div>
     </li>
 
 </ul>

@@ -29,7 +29,7 @@ export class TrendingMoviesComponent  implements OnInit {
       });
 
       this.trendingMovies= movies;
-      console.log(data);
+     // console.log(data);
   });
 
     // this.moviesService.getMovies()
