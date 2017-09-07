@@ -1,4 +1,4 @@
-<ul class="list-unstyled">
+<!-- <ul class="list-unstyled">
 
     <li class="media" *ngFor="let movie of trendingMovies">
 
@@ -15,11 +15,34 @@
             </div>
             <p class="description">{{ movie.overview }}</p>
         
-            <div class="moreinfo_footer">
-                <p class="view_more"><a id="movie_details"  alt="movie details">More Info</a></p>
-            </div>
+            
     
     </div>
+    <div class="view_more">
+            <a id="movie_details"  alt="movie details">More Info</a>
+    </div>
     </li>
+    
+</ul> -->
 
-</ul>
+
+<div class="row" >
+    <div class="col-md-5 col-lg-5 row-item" *ngFor="let movie of trendingMovies">
+        <div class="col-md-5 col-lg-5 image">
+                <img  src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7 col-lg-7">
+                    <div class="card-div">
+                        <span class="card-movie-title">{{ movie.title }}</span>
+                        <span class="glyphicon glyphicon-star" id="vote_average">{{ movie.vote_average}}</span>
+                    </div>
+        
+                    <div class="genres-ellipsis">
+                        <span class="glyphicon glyphicon-calendar" id="release_date">{{movie.release_date.split("-")[0]}}</span>
+                        <span *ngFor="let genres of movie.genre_ids; let isLast=last" id="genres">{{genreData[genres]}}{{isLast ? '' : ' | '}} </span>
+                    </div>
+                    <p class="description">{{ movie.overview }}</p>
+        </div>
+    </div>
+</div>
+       

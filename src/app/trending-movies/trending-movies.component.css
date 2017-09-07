@@ -1,25 +1,14 @@
-.media{
-    
-        /* Add shadows to create the "card" effect */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-    
-}
+.row{
+    padding: 2px ;
+    margin: 10px;
+    margin: 20px 300px 0px 300px;
+} 
 
-.media:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.media-body{
-    padding: 2px 16px;
-}
-
-
-.mt-0{
+.card-movie-title{
     font-family: Verdana, Arial, sans-serif;
     font-weight: bold;
     color: #136CB2;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .description{
@@ -64,12 +53,42 @@ span#genres{
     text-overflow: ellipsis;
     font-style: italic;
 }
-.moreinfo_footer{
 
-}
 .view_more{
     border-top: 1px solid #e3e3e3;
     bottom: 0;
     left: 10;
     padding: 16px;
+    position: absolute;
+  
+}
+
+
+img{
+    width: 100%;
+}
+
+
+.genres-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.row-item{
+    padding: 0px;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+}
+
+.dummy-row{
+    margin: 10px;
+}
+
+.image{
+    padding: 0px;
+}
+
+.card-div{
+    margin-top: 10px;
 }

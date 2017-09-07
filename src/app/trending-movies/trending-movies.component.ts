@@ -10,7 +10,7 @@ import { GenresService } from '../services/genres.service';
 export class TrendingMoviesComponent  implements OnInit {
   trendingMovies: any[];
   genres: any[];
-  baseImageUrl = 'http://image.tmdb.org/t/p/w185';
+  baseImageUrl = 'http://image.tmdb.org/t/p/w342';//185
   public genreData: any;
 
   constructor(private moviesService: MoviesService,private genresService: GenresService ) { 
