@@ -2,8 +2,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body{
-
-    
     background-color: #f4f4f4;
 }
 
@@ -12,16 +10,26 @@ header {
     top: 0;
     left: 0;
     background-color: #081c24;
-    
     width: 100%;
     z-index: 999;
 }
 
-header .content{
+ .content{
     height: 121px;
     padding: 0px;
+    text-align: center;
 }
 
 .body{
     padding: 20px;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    margin-top: 10px;
+    left: 0;
+    background-color: #081c24;
+    width: 100%;
+    z-index: 999;
 }

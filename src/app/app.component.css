@@ -7,14 +7,15 @@ nav a {
     border-radius: 4px;
   }
   nav a:visited, a:link {
-    color: #607D8B;
+    color: #2D9200;
   }
   nav a:hover {
-    color: #039be5;
-    background-color: #CFD8DC;
+    /* color: #039be5; */
+    color: #FFFFFF;
   }
   nav a.active {
     color: #039be5;
+    border-bottom: 1px solid #ffe406;
   }
 
   #main_title{

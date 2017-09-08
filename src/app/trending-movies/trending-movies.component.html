@@ -1,7 +1,6 @@
-
+<h2 id="main_title">{{currentlyActiveTab}}</h2>
 <div class="row" >
-
-    <h1 id="main_title">{{title}}</h1>
+   
     <div class="col-md-5 col-lg-5 row-item" *ngFor="let movie of trendingMovies">
         <div class="col-md-5 col-lg-5 image">
                 <img  src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
@@ -24,4 +23,7 @@
         </div>
     </div>
 </div>
+<div class="nextpage-div">
+       <span class="glyphicon glyphicons-circle-arrow-right nextpage-btn" (click)="onClick()">NEXT</span>
        
+</div>

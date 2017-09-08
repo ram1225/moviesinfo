@@ -7,20 +7,17 @@ import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class MoviesService {
-  private moviesUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=e4c75b492f15901b665f2dddfc35b81a&language=en-US&page=1';
+  private moviesUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=e4c75b492f15901b665f2dddfc35b81a&language=en-US&page=';
   private genresUrl = 'https://api.themoviedb.org/3/genre/movie/list?api_key=e4c75b492f15901b665f2dddfc35b81a&language=en-US';
   private genres: any[];
   constructor(private http: Http) { }
 
 
-  getMovies(){
-    return this.http.get(this.moviesUrl);
-   
-  }
 
-  getMoviesAndGenres(): Observable<any> {
+
+  getMoviesAndGenres(pageNumber: number): Observable<any> {
     return Observable.forkJoin([
-      this.http.get(this.moviesUrl).map(res => res.json()),
+      this.http.get(this.moviesUrl+pageNumber).map(res => res.json()),
       this.http.get(this.genresUrl).map(res => res.json())
     ])
     .map((data: any[]) => {

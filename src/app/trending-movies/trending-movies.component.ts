@@ -8,41 +8,43 @@ import { TruncateModule } from 'ng2-truncate';
   templateUrl: './trending-movies.component.html',
   styleUrls: ['./trending-movies.component.css']
 })
-export class TrendingMoviesComponent  implements OnInit {
+export class TrendingMoviesComponent implements OnInit {
+  defaultPageNumber = 1;
+  currentlyActiveTab: string = "TRENDING MOVIES";
   trendingMovies: any[];
   genres: any[];
   baseImageUrl = 'http://image.tmdb.org/t/p/w342';//185
   public genreData: any;
 
-  constructor(private moviesService: MoviesService,private genresService: GenresService ) { 
-   
+  constructor(private moviesService: MoviesService, private genresService: GenresService) {
+
   }
 
-  ngOnInit(){ 
-    this.moviesService.getMoviesAndGenres() 
-    .subscribe(data=> {
+  ngOnInit() {
+    this.getNextPageResults(this.defaultPageNumber);
+  }
+  
+  getNextPageResults(pageNum: number){
+    this.moviesService.getMoviesAndGenres(this.defaultPageNumber)
+    .subscribe(data => {
       let movies: any = data[0].results;
-      this.genres  = data[1].genres;
+      this.genres = data[1].genres;
 
       this.genreData = {};
       this.genres.forEach(element => {
         this.genreData[element.id] = element.name;
       });
 
-      this.trendingMovies= movies;
-     // console.log(data);
-  });
+      this.trendingMovies = movies;
+      // console.log(data);
+    });
 
-    // this.moviesService.getMovies()
-    // .subscribe(response=> {
-    //     this.trendingMovies= response.json().results;
-    // });
-
-    // this.genresService.getGenres()
-    // .subscribe(response=>{
-    //     this.genres=response.json().genres;
-    // });
   }
-   
+
+  onClick(){
+    this.defaultPageNumber++;
+    this.getNextPageResults(this.defaultPageNumber);
+  }
+
 
 }

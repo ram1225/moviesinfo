@@ -1,6 +1,14 @@
+#main_title{
+    font-size: 1.2em;
+    
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
 .row{
     padding: 2px ;
-    margin: 10px;
     margin: 20px 300px 0px 300px;
 } 
 
@@ -80,9 +88,7 @@ img{
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
 }
 
-.dummy-row{
-    margin: 10px;
-}
+
 
 .image{
     padding: 0px;
@@ -102,3 +108,17 @@ img{
     text-decoration: none;
 }
 
+.nextpage-div{
+    
+    position: absolute;
+    right: 28%;  
+}
+
+.nextpage-div button{
+    position: relative;
+    background-color: #FFFFFF;
+    
+    font-weight: bold;
+    color: #136CB2;
+    font-size: 13px;
+}
