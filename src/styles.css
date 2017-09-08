@@ -3,7 +3,25 @@
 
 body{
 
-    padding: 20px;
+    
     background-color: #f4f4f4;
 }
 
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #081c24;
+    
+    width: 100%;
+    z-index: 999;
+}
+
+header .content{
+    height: 121px;
+    padding: 0px;
+}
+
+.body{
+    padding: 20px;
+}

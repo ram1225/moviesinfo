@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { GenresService } from '../services/genres.service';
+import { TruncateModule } from 'ng2-truncate';
 
 @Component({
   selector: 'app-trending-movies',

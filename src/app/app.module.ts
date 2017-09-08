@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MoviesService } from './services/movies.service';
 import { GenresService } from './services/genres.service';
 
+import { TruncateModule } from 'ng2-truncate';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { GenresService } from './services/genres.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    TruncateModule
   ],
   providers: [MoviesService,GenresService],
   bootstrap: [AppComponent]
