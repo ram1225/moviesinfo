@@ -106,18 +106,19 @@ img{
 #movie_details{
     color: #000;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nextpage-div{
     
     position: absolute;
     right: 28%;  
+    margin: 10px;
 }
 
 .nextpage-div button{
     position: relative;
     background-color: #FFFFFF;
-    
     font-weight: bold;
     color: #136CB2;
     font-size: 13px;

@@ -18,12 +18,13 @@
                     <p class="description">{{ movie.overview |  truncate : 350 : "..." }}</p> 
                     <!-- using thirdparty truncate plugin for trimming down extra lines : https://github.com/yellowspot/ng2-truncate -->
                     <div class="view_more">
-                            <a id="movie_details"  alt="movie details" href="www.google.com">More Info</a>
+                            <a id="movie_details"  alt="movie details"  [routerLink]="['/movie-details', movie.id]" (click)="getMovieDetails(movie.id)">More Info</a>
                     </div>
         </div>
     </div>
 </div>
 <div class="nextpage-div">
-       <span class="glyphicon glyphicons-circle-arrow-right nextpage-btn" (click)="onClick()">NEXT</span>
+       <span *ngIf="defaultPageNumber>1" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onPreviousClick()">PREVIOUS</span>
+       <span *ngIf="defaultPageNumber<=totalMovieResults" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onClick()">NEXT</span>
        
 </div>

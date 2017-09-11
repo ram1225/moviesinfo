@@ -10,6 +10,7 @@ import { TruncateModule } from 'ng2-truncate';
 })
 export class TrendingMoviesComponent implements OnInit {
   defaultPageNumber = 1;
+  totalMovieResults=1;
   currentlyActiveTab: string = "TRENDING MOVIES";
   trendingMovies: any[];
   genres: any[];
@@ -27,6 +28,7 @@ export class TrendingMoviesComponent implements OnInit {
   getNextPageResults(pageNum: number){
     this.moviesService.getMoviesAndGenres(this.defaultPageNumber)
     .subscribe(data => {
+      this.totalMovieResults=data[0].total_results;
       let movies: any = data[0].results;
       this.genres = data[1].genres;
 
@@ -36,7 +38,7 @@ export class TrendingMoviesComponent implements OnInit {
       });
 
       this.trendingMovies = movies;
-      // console.log(data);
+       //console.log(this.totalMovieResults);
     });
 
   }
@@ -44,7 +46,14 @@ export class TrendingMoviesComponent implements OnInit {
   onClick(){
     this.defaultPageNumber++;
     this.getNextPageResults(this.defaultPageNumber);
+    window.scrollTo(0,0);
+  }
+  onPreviousClick(){
+    this.defaultPageNumber--;
+    this.getNextPageResults(this.defaultPageNumber);
+    window.scrollTo(0,0);
   }
 
+  
 
 }

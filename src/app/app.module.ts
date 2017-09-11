@@ -12,12 +12,14 @@ import { MoviesService } from './services/movies.service';
 import { GenresService } from './services/genres.service';
 
 import { TruncateModule } from 'ng2-truncate';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrendingMoviesComponent,
-    AllMoviesComponent
+    AllMoviesComponent,
+    MovieDetailsComponent
     
   ],
   imports: [
