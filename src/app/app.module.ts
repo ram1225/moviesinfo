@@ -14,19 +14,22 @@ import { GenresService } from './services/genres.service';
 import { TruncateModule } from 'ng2-truncate';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 @NgModule({
   declarations: [
     AppComponent,
     TrendingMoviesComponent,
     AllMoviesComponent,
     MovieDetailsComponent
-    
+     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    TruncateModule
+    TruncateModule,
+    LazyLoadImageModule
   ],
   providers: [MoviesService,GenresService],
   bootstrap: [AppComponent]

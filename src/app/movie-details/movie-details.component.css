@@ -50,6 +50,6 @@ div.custom_bg:before {
     display: block;
     background-image: radial-gradient(at 10% 30%, #3a181a 0%, #5b342e 100%);
     will-change: opacity;
-    filter: opacity(100%);
+    filter: opacity(90%);
     transition: filter 1s;
 }

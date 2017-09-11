@@ -6,5 +6,6 @@ export const GlobalUrls = Object.freeze({
       apiKey : '?api_key=e4c75b492f15901b665f2dddfc35b81a',
       language : '&language=en-US',
       page : '&page=',
-      baseImageUrl : 'http://image.tmdb.org/t/p/w342'    //185
+      baseImageUrl : 'http://image.tmdb.org/t/p/w342',    //185
+      backdropImage:'https://image.tmdb.org/t/p/w1400_and_h450_bestv2'
 });

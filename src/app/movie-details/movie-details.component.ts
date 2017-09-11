@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../services/movies.service';
 import { GlobalUrls } from './../util/Global';
 
+
 @Component({
   selector: 'product-details',
   templateUrl: './movie-details.component.html',
@@ -11,12 +12,15 @@ import { GlobalUrls } from './../util/Global';
 export class MovieDetailsComponent implements OnInit, OnDestroy {
   private id: number;
   private sub: any;
-  private movieDetails: any ="";
+  private movieDetails: any = "";
   baseImageUrl = GlobalUrls.baseImageUrl;
+  image = 'https://images.unsplash.com/photo-1443890923422-7819ed4101c0?fm=jpg';
+  offset = 100;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
 
   ngOnInit() {
+    
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       this.getMovieDetails(this.id);
@@ -27,8 +31,9 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     this.moviesService.getMovieDetails(movieId)
       .subscribe(res => {
 
-        this.movieDetails=res;
-        console.log(this.movieDetails.poster_path);
+        this.movieDetails = res;
+        this.image=GlobalUrls.backdropImage+this.movieDetails.backdrop_path;
+        console.log(this.image);
       });
 
   }
