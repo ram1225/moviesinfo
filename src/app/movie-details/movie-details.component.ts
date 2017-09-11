@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../services/movies.service';
+import { GlobalUrls } from './../util/Global';
 
 @Component({
   selector: 'product-details',
@@ -11,6 +12,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   private id: number;
   private sub: any;
   private movieDetails: any ="";
+  baseImageUrl = GlobalUrls.baseImageUrl;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
 
@@ -26,7 +28,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
       .subscribe(res => {
 
         this.movieDetails=res;
-        //console.log(res.budget);
+        console.log(this.movieDetails.poster_path);
       });
 
   }

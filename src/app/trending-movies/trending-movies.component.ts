@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { GenresService } from '../services/genres.service';
 import { TruncateModule } from 'ng2-truncate';
+import { GlobalUrls } from './../util/Global';
 
 @Component({
   selector: 'app-trending-movies',
@@ -14,7 +15,7 @@ export class TrendingMoviesComponent implements OnInit {
   currentlyActiveTab: string = "TRENDING MOVIES";
   trendingMovies: any[];
   genres: any[];
-  baseImageUrl = 'http://image.tmdb.org/t/p/w342';//185
+  baseImageUrl = GlobalUrls.baseImageUrl; //'http://image.tmdb.org/t/p/w342';//185
   public genreData: any;
 
   constructor(private moviesService: MoviesService, private genresService: GenresService) {
