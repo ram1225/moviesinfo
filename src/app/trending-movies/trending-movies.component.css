@@ -113,12 +113,13 @@ img{
 .nextpage-div{
     
     position: absolute;
-    right: 28%;  
+    right: 0%;  
     margin: 10px;
-
+    margin-right: 476px;
 }
 
 .nextpage-div button{
+    margin-right: 476px;
     position: relative;
     font-weight: bold;
     color: #136CB2;
