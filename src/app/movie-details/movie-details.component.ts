@@ -14,8 +14,8 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   private sub: any;
   private movieDetails: any = "";
   baseImageUrl = GlobalUrls.baseImageUrl;
-  image = 'https://images.unsplash.com/photo-1443890923422-7819ed4101c0?fm=jpg';
-  offset = 100;
+  image = '';
+  offset = 1000;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
 
