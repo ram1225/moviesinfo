@@ -7,5 +7,6 @@ export const GlobalUrls = Object.freeze({
       language : '&language=en-US',
       page : '&page=',
       baseImageUrl : 'http://image.tmdb.org/t/p/w300_and_h450_bestv2',    //185
-      backdropImage:'https://image.tmdb.org/t/p/w1400_and_h450_bestv2'
+      backdropImage:'https://image.tmdb.org/t/p/w1400_and_h450_bestv2',
+      searchUrl:'/search/movie'
 });

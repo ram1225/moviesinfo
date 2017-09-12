@@ -15,13 +15,15 @@ import { TruncateModule } from 'ng2-truncate';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrendingMoviesComponent,
     AllMoviesComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SearchComponent
      
   ],
   imports: [
