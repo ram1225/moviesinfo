@@ -1,21 +1,26 @@
 <div class="header large" [lazyLoad]="image">
-        <div class="custom_bg lazyloaded"   >
-                <div class="single_column">
-                        <div class="images">
-                            <div class="poster">
-                                
-                                    <img src="{{baseImageUrl+movieDetails.poster_path}}" alt="" >
-                                    <div class="header_poster_wrapper">
-                                            <section class="headerposter">
-            
-                                            </section>
-                                        </div>
-                            </div>
-                            
-                        </div>
+    <div class="custom_bg lazyloaded">
+        <div class="single_column">
+            <section class="images">
+                <div class="poster">
+                    <div class="image_content">
+                        <img src="{{baseImageUrl+movieDetails.poster_path}}" alt="">
+                    </div>
                 </div>
+                <div class="header_poster_wrapper">
+                        <section class="desc-header">
+                            <div class="title"><span>{{ movieDetails.original_title}}</span>
+                                <span class="release_date"> ({{movieDetails.release_date.split("-")[0]}})</span>
+                            </div>
+                        </section>
+
+                    </div>
+            </section>
+
+
         </div>
+    </div>
 </div>
 
 
-<!-- decoding and coding from here https://www.themoviedb.org/movie/211672-minions -->
+<!-- decoding and coding from here https://www.themoviedb.org/movie/211672-minions -->  

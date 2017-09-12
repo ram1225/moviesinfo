@@ -30,7 +30,6 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   getMovieDetails(movieId: number) {
     this.moviesService.getMovieDetails(movieId)
       .subscribe(res => {
-
         this.movieDetails = res;
         this.image=GlobalUrls.backdropImage+this.movieDetails.backdrop_path;
         console.log(this.image);
