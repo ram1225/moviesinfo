@@ -1,31 +1,29 @@
 <h2 id="main_title">{{currentlyActiveTab}}</h2>
-<div class="row">
-
-    <div class="col-md-5 col-lg-5 row-item effects clearfix" id="effect-1" *ngFor="let movie of trendingMovies">
-        <div class="view_more overlay" id="overlayid">
-            <a class="expand" id="movie_details" alt="movie details" [routerLink]="['/movie-details', movie.id]" (click)="getMovieDetails(movie.id)">More Info</a>
-            <a class="close-overlay hidden">x</a>
-        </div>
+<div class="row" >
+   
+    <div class="col-md-5 col-lg-5 row-item effects clearfix" id="effect-1"  *ngFor="let movie of trendingMovies">
         <div class="col-md-5 col-lg-5 image">
-            <img src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
+                <img  src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
         </div>
         <div class="col-md-7 col-lg-7 card-info">
-            <div class="card-div">
-                <span class="card-movie-title">{{ movie.title }}</span>
-                <span class="glyphicon glyphicon-star" id="vote_average">{{ movie.vote_average}}</span>
-            </div>
-
-            <div class="genres-ellipsis">
-                <span class="glyphicon glyphicon-calendar" id="release_date">{{movie.release_date.split("-")[0]}}</span>
-                <span *ngFor="let genres of movie.genre_ids; let isLast=last" id="genres">{{genreData[genres]}}{{isLast ? '' : ' | '}} </span>
-            </div>
-            <p class="description">{{ movie.overview | truncate : 350 : "..." }}</p>
-            <!-- using thirdparty truncate plugin for trimming down extra lines : https://github.com/yellowspot/ng2-truncate -->
-
+                    <div class="card-div">
+                        <span class="card-movie-title">{{ movie.title }}</span>
+                        <span class="glyphicon glyphicon-star" id="vote_average">{{ movie.vote_average}}</span>
+                    </div>
+        
+                    <div class="genres-ellipsis">
+                        <span class="glyphicon glyphicon-calendar" id="release_date">{{movie.release_date.split("-")[0]}}</span>
+                        <span *ngFor="let genres of movie.genre_ids; let isLast=last" id="genres">{{genreData[genres]}}{{isLast ? '' : ' | '}} </span>
+                    </div>
+                    <p class="description">{{ movie.overview |  truncate : 350 : "..." }}</p> 
+                    <!-- using thirdparty truncate plugin for trimming down extra lines : https://github.com/yellowspot/ng2-truncate -->
+                    <div class="view_more">
+                            <a id="movie_details"  alt="movie details"  [routerLink]="['/movie-details', movie.id]" (click)="getMovieDetails(movie.id)">More Info</a>
+                    </div>
         </div>
     </div>
 </div>
 <div class="nextpage-div">
-    <span *ngIf="defaultPageNumber>1" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onPreviousClick()">PREVIOUS</span>
-    <span *ngIf="defaultPageNumber<=totalMovieResults" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onClick()">NEXT</span>
+       <span *ngIf="defaultPageNumber>1" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onPreviousClick()">PREVIOUS</span>
+       <span *ngIf="defaultPageNumber<=totalMovieResults" class="btn btn-info btn-lg btn-sm nextpage-btn" (click)="onClick()">NEXT</span>   
 </div>
