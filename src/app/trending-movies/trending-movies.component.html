@@ -1,9 +1,4 @@
-<section id="search">
-    <div class="sub_media">
-           <span class=" autocomplete"><input class="search" type="text" placeholder="Search for a movie..."></span> 
-    </div>
-   
-</section>
+<movie-search  (searchEvent)="searchMovieDetails($event)" [results]="data"></movie-search>
 <h2 id="main_title">{{currentlyActiveTab}}</h2>
 <div class="row" >
    

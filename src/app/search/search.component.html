@@ -1,3 +1,30 @@
-<p>
-  search works!
-</p>
+<section id="search">
+  <div class="sub_media">
+    <span class="autocomplete">
+        <input #searchBox class="search" type="text" placeholder="Search for a movie..." [formControl]="searchInput"/> 
+        <!-- (keyup)="getMovieSearchResults(searchBox.value)" -->
+    </span>
+  </div>
+  <div class="animation-container" >
+      <div class="k-list-container">
+          <div class="k-list-scroller">
+            <ul *ngFor="let movie of results | async" class="suggestions">
+              <li class="m-item">
+                <div class="mv_results">
+                  <div class="mv_item">
+                    <div class="image_content">
+                      <img  src="{{baseImageUrl + movie.poster_path}}" alt="">
+                    </div>
+                    <div class="content">
+                      <p class="title"> {{ movie.title }}</p>
+                      <p class="sub">{{ movie.release_date }}</p>
+                    </div>
+                  </div>
+                </div>
+            </ul>
+          </div>
+        </div>
+  </div>
+  
+
+</section>

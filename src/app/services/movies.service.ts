@@ -10,7 +10,7 @@ import { GlobalUrls } from './../util/Global';
 export class MoviesService {
   private moviesUrl = GlobalUrls.baseUrl + GlobalUrls.popularMoviesUrl + GlobalUrls.apiKey + GlobalUrls.language + GlobalUrls.page;
   private movieDetailsUrl = GlobalUrls.baseUrl + GlobalUrls.movieDetails;
-  private movieSearchUrl = GlobalUrls.baseUrl + GlobalUrls.searchUrl+ GlobalUrls.apiKey + GlobalUrls.language + GlobalUrls.page+"&include_adult=false";
+  
   
   private genresUrl = 'https://api.themoviedb.org/3/genre/movie/list?api_key=e4c75b492f15901b665f2dddfc35b81a&language=en-US';
   private genres: any[];
@@ -36,11 +36,5 @@ export class MoviesService {
       .map(res => res.json()) ;
   }
 
-  // temporary fetching details by search
-  searchMovieDetails(query: string): Observable<any> {
-    // Forming URL for fetching movie details
-    return this.http
-      .get(this.movieSearchUrl +"&query="+query)
-      .map(res => res.json()) ;
-  }
+
 }

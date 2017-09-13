@@ -16,6 +16,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SearchComponent } from './search/search.component';
+import { FormsModule, FormControl, ReactiveFormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,11 +29,14 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpModule,
     TruncateModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    ReactiveFormsModule
   ],
+  
   providers: [MoviesService,GenresService],
   bootstrap: [AppComponent]
 })

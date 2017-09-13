@@ -8,5 +8,6 @@ export const GlobalUrls = Object.freeze({
       page : '&page=',
       baseImageUrl : 'http://image.tmdb.org/t/p/w300_and_h450_bestv2',    //185
       backdropImage:'https://image.tmdb.org/t/p/w1400_and_h450_bestv2',
+      thumbnail:'https://image.tmdb.org/t/p/w45_and_h67_bestv2',
       searchUrl:'/search/movie'
 });
