@@ -41,11 +41,13 @@ div.sub_area{
 }
 
 .autocomplete{
+    position: inline-block;
     background-image: none;
     background-position: 50% 50%;
     color: #444;
     background-color: #fafafa;
     border-color: #f0f0f0;
+    width: 1000px;
 }
 
 .searched-movies{
@@ -71,7 +73,8 @@ ul.suggestions{
     border-color: transparent;
     cursor: default;
     display: list-item;
-    
+    text-decoration: none;
+    list-style: none;
    }
 
    .mv_results{
@@ -129,17 +132,20 @@ ul.suggestions{
     overflow: auto;
     max-height: 370px !important;
     height: auto !important;
+    z-index: 2;
+    background-color: white;
    }
 
    .k-list-container{
     position: absolute;
+    z-index:2;
     font-size: 16px;
     font-family: "Source Sans Pro", Arial, sans-serif;
     font-stretch: normal;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    width: 998px;
+    width: 100%;
     min-width: 998px;
     height: 200px;
     display: block;
@@ -152,9 +158,10 @@ ul.suggestions{
 
    .animation-container {
    
+    z-index: 1;
+    height: 370px;
     box-sizing: border-box;
     width: 100% !important;
-    height: auto !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
     top: 167px !important;
@@ -166,4 +173,23 @@ ul.suggestions{
     border-bottom: 1px solid #dedede;
     background-color: #fff;
     overflow-y: hidden !important;
+   }
+   .show{
+       display: block;
+   }
+
+   input{
+    width: 75%;
+    position: relative;
+    margin: 0px 300px 0px 300px;
+   }
+
+   .search{
+       float: left;
+       width: 90%;
+   }
+
+   .autocomplete span{
+    
+    width: 10%;
    }

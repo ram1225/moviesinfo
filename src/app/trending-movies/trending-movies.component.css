@@ -8,8 +8,10 @@
 }
 
 .row{
+    position: relative;
     padding: 2px ;
     margin: 20px 300px 0px 300px;
+    z-index: 1;
 } 
 
 .card-movie-title{

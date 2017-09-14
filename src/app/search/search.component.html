@@ -1,15 +1,14 @@
 <section id="search">
   <div class="sub_media">
-    <span class="autocomplete">
-        <input #searchBox class="search" type="text" placeholder="Search for a movie..." [formControl]="searchInput"/> 
-        <!-- (keyup)="getMovieSearchResults(searchBox.value)" -->
-    </span>
+    <div class="autocomplete">
+        <input #searchBox class="search" type="text" placeholder="Search for a movie..." [formControl]="searchInput"  /><span (click)="searchBox.value=''">Clear</span> 
+    </div>
   </div>
-  <div class="animation-container" >
-      <div class="k-list-container">
-          <div class="k-list-scroller">
-            <ul *ngFor="let movie of results | async" class="suggestions">
-              <li class="m-item">
+  <!-- <div class="animation-container"> -->
+      <!-- <div class="k-list-container"> -->
+          <div class="k-list-scroller" [style.visibility]="(edit == false) ? 'hidden' : 'visible' " (window:mouseup)="autoCloseForDropdownCars($event)">
+            <ul>
+              <li class="m-item" *ngFor="let movie of results | async">
                 <div class="mv_results">
                   <div class="mv_item">
                     <div class="image_content">
@@ -23,8 +22,8 @@
                 </div>
             </ul>
           </div>
-        </div>
-  </div>
+        <!-- </div> -->
+  <!-- </div> -->
   
 
 </section>
