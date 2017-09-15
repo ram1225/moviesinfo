@@ -5,17 +5,21 @@ import { TruncateModule } from 'ng2-truncate';
 import { GlobalUrls } from './../util/Global';
 import { SearchComponent } from './../search/search.component';
 
+
 import { Observable } from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 import 'rxjs/Rx';
 import { Http } from '@angular/http';
+
+
+
 
 @Component({
   selector: 'app-trending-movies',
   templateUrl: './trending-movies.component.html',
   styleUrls: ['./trending-movies.component.css']
 })
-export class TrendingMoviesComponent implements OnInit {
+export class TrendingMoviesComponent  implements OnInit {
   defaultPageNumber = 1;
   totalMovieResults = 1;
   currentlyActiveTab: string = "TRENDING MOVIES";
@@ -29,7 +33,9 @@ export class TrendingMoviesComponent implements OnInit {
   private movieSearchUrl = GlobalUrls.baseUrl + GlobalUrls.searchUrl + GlobalUrls.apiKey + GlobalUrls.language + GlobalUrls.page + "&include_adult=false";
 
   constructor(private moviesService: MoviesService, private genresService: GenresService, private http: Http) {
+    
     this.data = new Observable(observer => this.dataObserver = observer);
+    
   }
 
   ngOnInit() {
@@ -73,6 +79,9 @@ export class TrendingMoviesComponent implements OnInit {
       .get(this.movieSearchUrl + "&query=" + event)
       .map(res => {
         // console.log(res.json().results);
+        if(res.json().results.total_pages>=1){
+         
+        }
         return res.json().results;
       })
       .subscribe(result => {

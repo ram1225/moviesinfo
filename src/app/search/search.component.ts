@@ -5,6 +5,7 @@ import { GlobalUrls } from './../util/Global';
 import { Observable, Subject } from 'rxjs';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'movie-search',
   templateUrl: './search.component.html',
@@ -16,7 +17,8 @@ export class SearchComponent implements OnInit {
   private baseImageUrl = GlobalUrls.thumbnail;
   //private searchTerms = new Subject<string>();
   private searchInput = new FormControl();
-  private edit = true;
+  private  isClassVisible: boolean= true;
+  private broadcastedNumberToHideAndShowDivInCss=0;
   //searchValue='';
   //searchBox='';
 
@@ -26,17 +28,21 @@ export class SearchComponent implements OnInit {
       .debounceTime(200)
       .distinctUntilChanged()
       //  .switchMap(term => this.moviesService.searchMovieDetails(query))
-      .subscribe((event) => this.searchEvent.emit(event));
+      .subscribe((event) => {
+        this.isClassVisible=false;
+        this.searchEvent.emit(event)});
+
+     // this.edit = true;
   }
 
 
-  autoCloseForDropdownCars(event) {
+  autoCloseForDropdownResults(event) {
     var target = event.target;
     if (!target.closest("#search")) {
-      // do whatever you want here
-      console.log("Test");
-      this.edit=false;
-
+    
+     // console.log("Test");
+      this.isClassVisible=true;
+      
       // clearing input area 
      // this.searchBox.value=' ';
     }
@@ -45,12 +51,5 @@ export class SearchComponent implements OnInit {
     // this.getMovieSearchResults();
   }
 
-  // getMovieSearchResults(query: string) {
-  //   // this.moviesService.searchMovieDetails()
-  //   this.searchTerms
-  //     .debounceTime(300)
-  //     .distinctUntilChanged()
-  //   //  .switchMap(term => this.moviesService.searchMovieDetails(query))
-  //     .subscribe((event) => this.searchEvent.emit(event));
-  // }
+  
 }

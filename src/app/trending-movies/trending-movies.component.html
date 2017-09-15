@@ -1,8 +1,7 @@
 <movie-search  (searchEvent)="searchMovieDetails($event)" [results]="data"></movie-search>
 <h2 id="main_title">{{currentlyActiveTab}}</h2>
-<div class="row" >
-   
-    <div class="col-md-5 col-lg-5 row-item effects clearfix" id="effect-1"  *ngFor="let movie of trendingMovies">
+<div class="row">
+       <div class="col-md-5 col-lg-5 row-item effects clearfix" id="effect-1"  *ngFor="let movie of trendingMovies">
         <div class="col-md-5 col-lg-5 image">
                 <img  src="{{ baseImageUrl + movie.poster_path }}" alt="Generic placeholder image">
         </div>

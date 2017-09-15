@@ -193,3 +193,18 @@ ul.suggestions{
     
     width: 10%;
    }
+
+ 
+
+.glyphicon-remove-circle{
+    margin-top: 14px;
+}
+
+.k-list-scroller{
+    /* visibility: visible; */
+    margin: 0 270px 0px 301px;
+    border: 1px solid #dedede;
+}
+.my-class {
+    visibility: hidden;
+  }
