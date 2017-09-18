@@ -11,28 +11,24 @@ import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent  {
   @Input() results: Observable<any>;
   @Output() searchEvent: EventEmitter<any> = new EventEmitter();
   private baseImageUrl = GlobalUrls.thumbnail;
-  //private searchTerms = new Subject<string>();
   private searchInput = new FormControl();
   private  isClassVisible: boolean= true;
   private broadcastedNumberToHideAndShowDivInCss=0;
-  //searchValue='';
-  //searchBox='';
+
 
   constructor() {
     this.searchInput
       .valueChanges
       .debounceTime(200)
       .distinctUntilChanged()
-      //  .switchMap(term => this.moviesService.searchMovieDetails(query))
-      .subscribe((event) => {
+       .subscribe((event) => {
         this.isClassVisible=false;
         this.searchEvent.emit(event)});
 
-     // this.edit = true;
   }
 
 
@@ -40,16 +36,11 @@ export class SearchComponent implements OnInit {
     var target = event.target;
     if (!target.closest("#search")) {
     
-     // console.log("Test");
       this.isClassVisible=true;
-      
-      // clearing input area 
-     // this.searchBox.value=' ';
+
     }
   }
-  ngOnInit() {
-    // this.getMovieSearchResults();
-  }
+ 
 
   
 }
