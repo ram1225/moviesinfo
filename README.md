@@ -36,3 +36,18 @@ For search, gone through reactive programming stuff
 http://blog.rangle.io/observables-and-reactive-programming-in-angular-2/
 
 http://plnkr.co/edit/Lkx6Eyu5IdCO6LBKoeyC?p=preview
+
+
+deployed project into firebase
+https://www.youtube.com/watch?v=82PRCg4QfpE
+
+https://moviesinfo-56c15.firebaseapp.com/trending
+
+
+ to generate prod build:  ng build --prod
+firebase commands used to deploy:
+
+npm install -g firebase-tools
+firebase login
+firebase init
+firebase deploy

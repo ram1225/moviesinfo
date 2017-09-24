@@ -14,10 +14,10 @@ import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 export class SearchComponent  {
   @Input() results: Observable<any>;
   @Output() searchEvent: EventEmitter<any> = new EventEmitter();
-  private baseImageUrl = GlobalUrls.thumbnail;
-  private searchInput = new FormControl();
-  private  isClassVisible: boolean= true;
-  private broadcastedNumberToHideAndShowDivInCss=0;
+  public baseImageUrl = GlobalUrls.thumbnail;
+  public searchInput = new FormControl();
+  public  isClassVisible: boolean= true;
+  public broadcastedNumberToHideAndShowDivInCss=0;
 
 
   constructor() {

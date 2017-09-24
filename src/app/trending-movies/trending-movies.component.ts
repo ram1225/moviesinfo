@@ -30,8 +30,8 @@ export class TrendingMoviesComponent  implements OnInit {
   public genreData: any;
   public dataObserver: Observer<string>;
 
-  private data: Observable<any>;
-  private movieSearchUrl = GlobalUrls.baseUrl + GlobalUrls.searchUrl + GlobalUrls.apiKey + GlobalUrls.language + GlobalUrls.page + "&include_adult=false";
+  public data: Observable<any>;
+  public movieSearchUrl = GlobalUrls.baseUrl + GlobalUrls.searchUrl + GlobalUrls.apiKey + GlobalUrls.language + GlobalUrls.page + "&include_adult=false";
 
   constructor(private moviesService: MoviesService, private genresService: GenresService, private http: Http) {
     
