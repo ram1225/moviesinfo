@@ -67,8 +67,14 @@ span#genres{
     border-top: 1px solid #e3e3e3;
     padding: 16px;
     position: absolute;
+    display: none;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    background: #F3F3F3;
+    text-align: center;
     bottom: 0px;
-    width: calc(100% - 32px);
+    width: 100%; 
+    /*calc(100% - 32px);*/
   
 }
 
@@ -107,9 +113,12 @@ img{
 }
 
 #movie_details{
-    color: #000;
+    color: #000000;
     text-decoration: none;
     cursor: pointer;
+    margin: 0 auto;
+    /*text-align: center;*/
+    width: 100%;
 }
 
 .nextpage-div{

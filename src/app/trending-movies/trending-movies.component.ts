@@ -62,6 +62,23 @@ export class TrendingMoviesComponent  implements OnInit {
 
   }
 
+
+  mouseEnter(event,index){
+ 
+   let srcObj=event.currentTarget.offsetParent.children[index].childNodes["5"];
+    
+    if(srcObj.getAttribute("class")=="view_more"){
+     srcObj.setAttribute("style","display:block"); 
+    }
+  }
+    
+  mouseLeave(event,index){
+    let srcObj=event.currentTarget.offsetParent.children[index].childNodes["5"];
+    if(srcObj.getAttribute("class")=="view_more"){
+     srcObj.setAttribute("style","display:none");
+    }
+  }
+
   onClick() {
     this.defaultPageNumber++;
     this.getNextPageResults(this.defaultPageNumber);
