@@ -16,7 +16,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SearchComponent } from './search/search.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FormsModule, FormControl, ReactiveFormsModule }   from '@angular/forms';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FormsModule, FormControl, ReactiveFormsModule }   from '@angular/forms'
     TrendingMoviesComponent,
     AllMoviesComponent,
     MovieDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    SignupFormComponent,
+    PostsComponent
      
   ],
   imports: [
