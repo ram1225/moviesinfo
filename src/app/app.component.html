@@ -1,4 +1,4 @@
-<header>
+<header [style.backgroundColor]="backgroundColor">
   <div class="content">
     <h2 class="mainTitle" ><a [routerLink]="['/trending']" class="navigateToHomePage">Movies Info</a></h2>
     <nav>
@@ -7,7 +7,6 @@
       <a routerLink="/posts" routerLinkActive="active">Posts</a>
     </nav>
   </div>
-
 </header>
 <div class="body">
   <router-outlet></router-outlet>
