@@ -17,7 +17,7 @@
 
 <div class="k-list-scroller row" [class.my-class]="isClassVisible"  (window:mouseup)="autoCloseForDropdownResults($event)">  
   <ul>
-    <li class="m-item" *ngFor="let movie of results | async" >
+    <li class="m-item" *ngFor="let movie of results | async"  [routerLink]="['/movie-details', movie.id]">
       <div class="mv_results">
         <div class="mv_item">
           <div class="image_content">

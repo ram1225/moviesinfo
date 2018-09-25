@@ -91,11 +91,11 @@ export class TrendingMoviesComponent  implements OnInit {
   }
 
   // temporary fetching details by search
-  searchMovieDetails(event) {
+  searchMovieDetails(searchQueryStr) {
     // Forming URL for fetching movie details
  
     return this.http
-      .get(this.movieSearchUrl + "&query=" + event)
+      .get(this.movieSearchUrl + "&query=" + searchQueryStr)
       .map(res => {
         // console.log(res.json().results);
         if(res.json().results.total_pages>=1){
